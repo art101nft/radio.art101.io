@@ -1,0 +1,46 @@
+# SPDX-License-Identifier: BSD-3-Clause
+# Copyright (c) 2021, dsc@xmr.pm
+
+import os
+cwd = os.path.dirname(os.path.realpath(__file__))
+
+
+def bool_env(val):
+    return val is True or (isinstance(val, str) and (val.lower() == 'true' or val == '1'))
+
+
+debug = True
+host = "127.0.0.1"
+port = 2600
+timezone = "America/Los_Angeles"
+
+dir_music = os.environ.get("DIR_MUSIC", os.path.join(cwd, "data", "music"))
+
+enable_search_route = bool_env(os.environ.get("ENABLE_SEARCH_ROUTE", False))
+
+discord_token = "xxxxxxx" # https://discord.com/developers/applications
+discord_admins = ["lza.art101.eth#7207"]
+discord_command_prefix = "!"
+
+icecast2_hostname = "localhost"
+icecast2_max_clients = 32
+icecast2_bind_host = "127.0.0.1"
+icecast2_bind_port = 24100
+icecast2_mount = "radio.ogg"
+icecast2_source_password = "changeme"
+icecast2_admin_password = "changeme"
+icecast2_relay_password = "changeme"  # for livestreams
+icecast2_live_mount = "live.ogg"
+icecast2_logdir = "/var/log/icecast2/"
+
+liquidsoap_host = "127.0.0.1"
+liquidsoap_port = 7555  # telnet
+liquidsoap_description = "IRC!Radio"
+liquidsoap_samplerate = 48000
+liquidsoap_bitrate = 164  # youtube is max 164kbps
+liquidsoap_crossfades = False  # not implemented yet
+liquidsoap_normalize = False  # not implemented yet
+liquidsoap_iface = icecast2_mount.replace(".", "(dot)")
+liquidsoap_max_song_duration = 60 * 11  # seconds
+
+re_youtube = r"[a-zA-Z0-9_-]{11}$"

@@ -1,0 +1,13 @@
+.idea
+data/music/*.jpg
+data/music/*.webp
+data/music/*.ogg*
+data/cross.liq
+data/db.sqlite3
+data/liquidsoap.service
+data/icecast.xml
+data/radio_nginx.conf
+data/soap.liq
+__pycache__
+.venv
+settings.py
