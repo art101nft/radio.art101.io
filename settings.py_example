@@ -21,6 +21,7 @@ enable_search_route = bool_env(os.environ.get("ENABLE_SEARCH_ROUTE", False))
 discord_token = "xxxxxxx" # https://discord.com/developers/applications
 discord_admins = ["lza.art101.eth#7207"]
 discord_command_prefix = "!"
+discord_servers = ["Art101 • Patrn • NFT Art"]
 
 icecast2_hostname = "localhost"
 icecast2_max_clients = 32

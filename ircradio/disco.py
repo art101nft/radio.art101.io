@@ -44,6 +44,10 @@ async def on_message(message):
     if message.author == bot.user:
         return
 
+    if str(message.guild) not in settings.discord_servers:
+        print(f'Unapproved guild: {message.guild}')
+        return
+
     msg = message.content
     if not msg.startswith(settings.discord_command_prefix):
         return
