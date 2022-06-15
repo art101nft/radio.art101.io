@@ -22,7 +22,7 @@ async def message_worker():
             data: dict = await msg_queue.get()
             target = data['target']
             msg = data['message']
-            await target.send(msg)
+            await target.send(f'`{msg}`')
         except Exception as ex:
             app.logger.error(f"message_worker(): {ex}")
         await asyncio.sleep(0.3)
@@ -84,7 +84,13 @@ class Commands:
     LOOKUP = ['np', 'tune', 'boo', 'request', 'dj',
               'skip', 'listeners', 'queue',
               'queue_user', 'pop', 'search', 'stats',
-              'rename', 'ban', 'whoami', 'hello']
+              'rename', 'ban', 'whoami', 'hello', 'help']
+
+    @staticmethod
+    async def help(*args, target=None, nick=None, **kwards):
+        """show help"""
+        m = f"See all the bot commands here: https://{settings.icecast2_hostname}"
+        await send_message(target=target, message=m)
 
     @staticmethod
     async def hello(*args, target=None, nick=None, **kwards):
