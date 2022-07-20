@@ -1,6 +1,6 @@
-# PhunkRadio
+# Art101 Radio
 
-PhunkRadio is a fork of IRC!Radio made by my friend dsc_.
+Art101 Radio is a fork of IRC!Radio made by my friend dsc_.
 It is a radio station for Discord servers. You hang around
 on Discord, adding YouTube songs to the bot, listening to it with
 all your friends. Great fun!
@@ -9,7 +9,7 @@ The original repository can be found here: https://git.wownero.com/dsc/ircradio
 
 ### Stack
 
-PhunkRadio aims to be minimalistic/small using:
+Art101 Radio aims to be minimalistic/small using:
 
 - Python >= 3.7
 - SQLite
